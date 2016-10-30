@@ -15,10 +15,10 @@ from app.users.models import User
 from app.users.decorators import requires_login
 
 
-mod = Blueprint('users', __name__, url_prefix='/users')
+mod = Blueprint('users', __name__)
 
 
-@mod.route('/me/')
+@mod.route('/')
 @requires_login
 def home():
     return render_template('users/profile.html', user=g.user)
